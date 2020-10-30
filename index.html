@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Project 3 Group 3</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="card-header p-3 bg-dark">Pandemic 2020 Dashboard</h1>
+    </header>
+    <!-- main -->
+    <main>
+        <!-- Container for everything data, data that will be pulled in java file  -->
+        <div class="container w-auto p-3">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <!-- Search -->
+                    <h4>Search for a State:</h4>
+                    <select name="states" id="option" class="search">
+                        <option value="" disabled selected>Select your option</option>
+                        <optgroup label="USA">
+                        <option value="Az">Arizona</option>
+                        <option value="Ca">California</option>
+                      </optgroup>
+                      <optgroup label="Europe">
+                        <option value="spain">Spain</option>
+                        <option value="italy">Italy</option>
+                      </optgroup>
+                    </select>
+                    <!-- local storage search history -->
+                    <ul class="list-group" id="history"></ul>
+                </div>
+                <!-- Hidden Div: info called appears to right of above search field -->
+                <div class="col-lg-9 col-md-12">
+                <div id="information"></div>
+                <h5 id="results"></h5>
+                <div class="d-flex flex-row justify-content-around align-items-center p-3 flex-wrap" id="data">
+                </div>
+                </div>
+                <!-- end of div -->
+            </div>
+        </div>
+   
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+          <div class="m-5 row justify-content-around">    
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+              <div class="card">
+                <h4 class="card-header bg-dark text-light">
+                </h4>
+                <ul id="list-toDo" class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <span class="badge badge-primary badge-pill"></span>
+                    <p class="m-1"></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+    
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+              <div class="card">
+                <h4 class="card-header bg-dark text-light"></h4>
+              <ul id="list-inProgress" class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span class="badge badge-primary badge-pill"></span>
+                  <p class="m-1"></p>
+                </li>
+              </ul>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+              <div class="card">
+                <h4 class="card-header bg-dark text-light"></h4>
+              <ul id="list-inReview" class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span class="badge badge-primary badge-pill"></span>
+                  <p class="m-1"></p>
+                </li>
+              </ul>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+              <div class="card">
+                <h4 class="card-header bg-dark text-light"></h4>
+              <ul id="list-done" class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span class="badge badge-primary badge-pill"></span>
+                  <p class="m-1"></p>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </div>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+    </main>
+</body>
+</html>
