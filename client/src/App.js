@@ -1,4 +1,4 @@
-import DataBox from './components/dataBox/DataBox';
+import DataBox_1 from './components/dataBox/DataBox_1';
 import Select from './components/select/Select'
 import NavBar from './components/NavBar';
 
@@ -60,10 +60,10 @@ function App() {
         {
           currentData.length ?
           <>
-            <DataBox cases={currentData[0].date}/>          
-            <DataBox/>
-            <DataBox/>
-            <DataBox/>
+            <DataBox_1 cases={currentData[0].date}/>          
+            <DataBox_1/>
+            <DataBox_1/>
+            <DataBox_1/>
             </>
           : null
         }
@@ -72,10 +72,10 @@ function App() {
         {
           currentData.length ?
           <>
-            <DataBox cases={currentData[0].date}/>          
-            <DataBox/>
-            <DataBox/>
-            <DataBox/>
+            <DataBox_1 cases={currentData[0].date}/>          
+            <DataBox_1/>
+            <DataBox_1/>
+            <DataBox_1/>
             </>
           : null
         }
