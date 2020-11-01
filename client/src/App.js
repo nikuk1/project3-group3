@@ -1,4 +1,4 @@
-import DataBox_1 from './components/dataBox/DataBox_1';
+import DataBox_1 from './components/dataBox/DataBox';
 import Select from './components/select/Select'
 import NavBar from './components/NavBar';
 
