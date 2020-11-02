@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function signUp() {
     return(
@@ -22,7 +22,7 @@ function signUp() {
                 </div>
 
                 <div className="field">
-                    <button className="button mr-20">Sign Up</button> <a href="/">Already a member?</a>
+                    <button className="button mr-20">Sign Up</button> <Link to="/sign-in">Already a member?</Link>
                 </div>
             </form>
         </div>

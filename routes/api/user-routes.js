@@ -10,9 +10,9 @@ const {
 } = require('../../controllers/user-controller');
 
 // /api/users
-router.route('/').get(getUsers);
+router.route('/sign-in').get(getUsers);
 
-router.route('/#').post(createUser);
+router.route('/').post(createUser);
 
 // /api/users/:userId
 router.route('/:userId').get(getSingleUser).put(updateUser).delete(deleteUser);

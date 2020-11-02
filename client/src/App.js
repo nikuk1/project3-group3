@@ -84,10 +84,10 @@ function App() {
         }
       </body>
       <Router>
-        <Route exact path="/#" component={SignUp}>
+        <Route exact path="/" component={SignUp}>
 
         </Route>
-        <Route path="/" component={SignIn}>
+        <Route path="/sign-in" component={SignIn}>
 
         </Route>
       </Router>

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function signIn() {
     return(
@@ -17,7 +17,7 @@ function signIn() {
                 </div>
 
                 <div className="field">
-                    <button className="button mr-20">Sign In</button> <a href="/#">Create an account</a>
+                    <button className="button mr-20">Sign In</button> <Link to="/">Create an account</Link>
                 </div>
             </form>
         </div>
