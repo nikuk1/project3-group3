@@ -6,7 +6,7 @@ import DataBox3 from './DataBox_3';
 function dataBox1() {
 console.log();
 return (
-<div class="card">
+<div className="card">
 <DataBox2/>
 <DataBox3/>
 </div> 

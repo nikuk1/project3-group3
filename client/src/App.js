@@ -17,22 +17,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Errored:------> import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap';
 // Errored:------> import 'https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css';
 
-async function fetchCurrentData() {
-  // console.log("data called");
-  const response = await axios.get("https://api.covidtracking.com/v1/us/current.json");
-  // console.log(response);
-  return response.data;
-}
+ async function fetchCurrentData() {
+// console.log("data called");
+   const response = await axios.get("https://api.covidtracking.com/v1/us/current.json");
+// console.log(response);
+   return response.data;
+ }
 function App() {
-  const [ currentData, updateCurrentState ] = useState([]);
+ const [ currentData, updateCurrentState ] = useState([]);
+
+  // another way?--
+  // useEffect(() => {
+  //   async function fetchCurrentData() {
+  //     const data = await axios.get("https://api.covidtracking.com/v1/us/current.json")
+  //   }
+  //   fetchCurrentData();
+  // },
+  // end of idea---
 
   useEffect(async ()=>{
-    // console.log(data)
-    const data = await fetchCurrentData();
-    updateCurrentState(data)
-  }, 
-  [])
-  // console.log(currentData[0].date);
+     const data = await fetchCurrentData();
+     updateCurrentState(data)
+     console.log(data)
+   }, 
+  []);
+  //  console.log(currentData[0].date);
   return (  
   <div>
       <header className="card-header p-3">
@@ -60,7 +69,7 @@ function App() {
         {
           currentData.length ?
           <>
-            <DataBox cases={currentData[0].date}/>          
+            <DataBox cases={currentData[0].date}/>   
             <DataBox/>
             <DataBox/>
             <DataBox/>
@@ -68,7 +77,7 @@ function App() {
           : null
         }
       </main>
-      <body className="m-5 row justify-content-around">
+      <div className="m-5 row justify-content-around">
         {
           currentData.length ?
           <>
@@ -79,7 +88,7 @@ function App() {
             </>
           : null
         }
-      </body>
+      </div>
   </div>
   );
 }

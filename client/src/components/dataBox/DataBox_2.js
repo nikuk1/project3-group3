@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function dataBox2() {
 console.log();
 return (    
-    <h4 class="card-header bg-dark text-light"></h4>
+    <h4 className="card-header bg-dark text-light"></h4>
 )
 }
 export default dataBox2;

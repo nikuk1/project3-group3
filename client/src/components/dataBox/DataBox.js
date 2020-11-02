@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataBox1 from './DataBox_1';
+import '../../App.css';
 
 function dataBox() {
 console.log();

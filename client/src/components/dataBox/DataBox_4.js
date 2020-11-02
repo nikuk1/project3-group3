@@ -6,7 +6,7 @@ import DataBox6 from './DataBox_6';
 function dataBox4() {
 console.log();
 return (    
-<li class="list-group-item">
+<li className="list-group-item">
 <DataBox5/>
 <DataBox6/>
 </li>

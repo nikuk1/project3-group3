@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function dataBox6() {
 console.log();
 return (    
-  <p class="m-1"></p>
+  <p className="m-1"></p>
 )
 }
 export default dataBox6;

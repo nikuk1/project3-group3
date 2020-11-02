@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Select1 from './Select_1';
+import '../../App.css';
 
 function Select() {
 console.log();
