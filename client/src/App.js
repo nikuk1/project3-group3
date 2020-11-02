@@ -1,10 +1,13 @@
 import DataBox from './components/dataBox/DataBox';
 import Select from './components/select/Select'
 import NavBar from './components/NavBar';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 // import DataGraph from './components/DataGraph';
 
 import {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 // Bootstrap 
@@ -80,6 +83,14 @@ function App() {
           : null
         }
       </body>
+      <Router>
+        <Route exact path="/#" component={SignUp}>
+
+        </Route>
+        <Route path="/" component={SignIn}>
+
+        </Route>
+      </Router>
   </div>
   );
 }
