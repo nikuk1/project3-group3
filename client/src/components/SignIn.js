@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function signIn() {
     return(
         <div className="form">
-            <form className="fields">
+            <form className="fields" onSubmit={this.handleSubmit}>
                 <div className="field">
                 <label className="fieldLable" htmlFor="username">Username:</label>
                 <input type="text" id="username" className="formInput" name="username"/>
@@ -13,7 +13,7 @@ function signIn() {
 
                 <div className="field">
                 <label className="fieldLable" htmlFor="password">Password:</label>
-                <input type="text" id="password" className="formInput" name="password"/>
+                <input type="password" id="password" className="formInput" name="password"/>
                 </div>
 
                 <div className="field">
