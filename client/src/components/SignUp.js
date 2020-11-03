@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
-class signUp extends Component {
+class signIn extends Component {
 
-    constructor (props) {
-        super(props);
+    constructor () {
+        super();
         this.state = {
             username: '',
             email: '',
@@ -17,26 +18,30 @@ class signUp extends Component {
     }
 
     handleChange(e) {
-        
-        let target = e.target;
-        let value = target.value;
-        let name = target.name;
-
-        this.setState({[name]: value});
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
-        fetch('http://localhost:3000/api/users', {
-            method: 'POST',
-            body: JSON.stringify(this.setState),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        .then(res => res.json())
-        .then(data => console.log(data));
+        axios.post('/api/users/', {
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password
+          })
+          .then(function (response) {
+            console.log(response);
+            alert("Thank you for signing up!");
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+          this.setState({
+            username: '',
+            email: '',
+            password: ''
+        });
     }
 
     render() {
@@ -45,21 +50,21 @@ class signUp extends Component {
                 <form className="fields" onSubmit={this.handleSubmit}>
                     <div className="field">
                     <label className="fieldLable" htmlFor="username">Username:</label>
-                    <input type="text" id="username" className="formInput" placeholder="Please be thoughtful!" name="username" onChange={this.handleChange} />
+                    <input type="text" id="username" className="formInput" placeholder="Be original!" name="username" value={this.state.username} onChange={this.handleChange} />
                     </div>
 
                     <div className="field">
                     <label className="fieldLable" htmlFor="email">Email:</label>
-                    <input type="email" id="email" className="formInput" placeholder="Must be real email" name="email" onChange={this.handleChange} />
+                    <input type="email" id="email" className="formInput" placeholder="example@example.com" name="email" value={this.state.email} onChange={this.handleChange} />
                     </div>
 
                     <div className="field">
                     <label className="fieldLable" htmlFor="password">Password:</label>
-                    <input type="password" id="password" className="formInput" placeholder="5 character min." name="password" onChange={this.handleChange} />
+                    <input type="password" id="password" className="formInput" placeholder="5 Character Min." name="password" value={this.state.password} onChange={this.handleChange}/>
                     </div>
 
                     <div className="field">
-                        <button className="button mr-20">Sign Up</button> <Link to="/sign-in">Already a member?</Link>
+                        <button type="submit" className="button mr-20">Submit</button> <Link to="/sign-in">Already a member?</Link>
                     </div>
                 </form>
             </div>
@@ -67,4 +72,4 @@ class signUp extends Component {
     }
 }
 
-export default signUp;
+export default signIn;
