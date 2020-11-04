@@ -42,6 +42,16 @@ function DataBox() {
       <br></br>
       Negative cases: {item.negative}
       <br></br>
+
+    </Card.Text>
+    {/* <Card.Link href="https://covidtracking.com/data">The Covid Tracking Project</Card.Link> */}
+  </Card.Body>
+
+  <Card.Body>
+    <Card.Title>Other Data</Card.Title>
+    {/* <Card.Subtitle className="mb-2 text-muted">Date {item.date}</Card.Subtitle> */}
+    <Card.Text>
+      
       Currently hospitalized: {item.hospitalizedCurrently}
       <br></br>
       Deaths: {item.death}
@@ -49,6 +59,8 @@ function DataBox() {
     </Card.Text>
     <Card.Link href="https://covidtracking.com/data">The Covid Tracking Project</Card.Link>
   </Card.Body>
+
+
 </Card> ))}
 
     </div>
