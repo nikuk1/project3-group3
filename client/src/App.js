@@ -1,22 +1,13 @@
-import DataBox from './components/dataBox/DataBox';
-import Select from './components/select/Select'
-import NavBar from './components/NavBar';
-
-// import DataGraph from './components/DataGraph';
-
-import {useState, useEffect} from 'react';
-import axios from 'axios';
-import './App.css';
-// Bootstrap 
 import 'bootstrap/dist/css/bootstrap.min.css';
-// May not need these:
-// import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
-// import 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css';
-// FontAwesome
-// Errored:------> import 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css';
-// Errored:------> import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap';
-// Errored:------> import 'https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import DataBox from './components/databox.js'
+import NavBar from './components/NavBar.js'
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+// import './App.css';
 
+<<<<<<< HEAD
  async function fetchCurrentData() {
 // console.log("data called");
    const response = await axios.get("https://api.covidtracking.com/v1/us/current.json");
@@ -90,7 +81,24 @@ function App() {
         }
       </div>
   </div>
+=======
+function App() {
+  return (
+    <div className="App">
+      <NavBar></NavBar>
+      <br></br>
+      <DataBox></DataBox>
+
+      <br></br>
+      <Router>
+        <Route exact path='/' component={SignUp}>
+        </Route>
+        
+        <Route exact path='/sign-in' component={SignIn}>
+        </Route>
+      </Router>
+    </div>
+>>>>>>> Design
   );
 }
-
 export default App;

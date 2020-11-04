@@ -13,15 +13,15 @@ const userController = {
         res.status(500).json(err);
       });
   },
-  // get single user by id
+  // get single user by username
   getSingleUser(req, res) {
-    User.findOne({ _id: req.params.userId })
+    User.findOne({ username: req.params.username })
       .select('-__v')
       // .populate('friends')
       // .populate('thoughts')
       .then((dbUserData) => {
         if (!dbUserData) {
-          return res.status(404).json({ message: 'No user with this id!' });
+          return res.status(404).json({ message: 'No user with this username!' });
         }
         res.json(dbUserData);
       })
