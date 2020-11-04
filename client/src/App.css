@@ -121,3 +121,6 @@ body {
     }
   }
   
+.data-box {
+    background: url("./covid.jpg");
+}

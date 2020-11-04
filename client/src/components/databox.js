@@ -49,11 +49,13 @@ function DataBox() {
   </Card.Body>
 
   <Card.Body>
-    <Card.Title>Other Data</Card.Title>
+    {/* <Card.Title>Other Data</Card.Title> */}
     {/* <Card.Subtitle className="mb-2 text-muted">Date {item.date}</Card.Subtitle> */}
     <Card.Text>
       
       Currently hospitalized: {item.hospitalizedCurrently}
+      <br></br>
+      Recovered: {item.recovered}
       <br></br>
       Deaths: {item.death}
 
