@@ -36,6 +36,7 @@ function DataBox() {
   <Card.Body>
     <Card.Title>Current Data</Card.Title>
     <Card.Subtitle className="mb-2 text-muted">Date {item.date}</Card.Subtitle>
+    <br></br>
     <Card.Text>
       
       Positive cases: {item.positive}
