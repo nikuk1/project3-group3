@@ -6,7 +6,7 @@
 * {
   box-sizing: border-box;
   /* Added during Project3-group3 */
-  flex-direction: row !important;
+  flex-direction: row !important;  
 }
 
 h1 {
@@ -26,6 +26,26 @@ background: #f1f1f1;
 /* Card items start --------------------------------------------------------------------- */
 /* Added during Project3-group3 */
 
+.data-box {
+  background: url('../src/img/covid-19.png') center no-repeat;
+  position: static;
+}
+
+.form-box {
+  background: url('../src/img/maskedCrowd.png') no-repeat center;
+}
+
+.card-custom {
+  opacity: 50%;
+}
+
+.homepage-bgimage {
+  background: url('../src/img/covid-19.png');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* end of newly created Project3-group3 styles (others in doc were altered as wel) */
 
@@ -128,6 +148,3 @@ body {
     }
   }
   
-.data-box {
-  background: url('./covid.jpg') no-repeat center;
-}

@@ -35,7 +35,7 @@ class signIn extends Component {
 
     render() {
         return(
-            <div className="form">
+            <div className="form-box">
                 <form className="fields" onSubmit={this.handleSubmit}>
                     <div className="field">
                     <label className="fieldLable" htmlFor="username">Username:</label>

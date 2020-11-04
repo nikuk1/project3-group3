@@ -5,6 +5,7 @@ import fetchData from '../API/fetchData';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import addDateSuffix from '../dateFormat';
+// import covid from '../img/covid-19.png';
 
 function DataBox() {
   const [data, setData] = React.useState([])
@@ -14,36 +15,42 @@ function DataBox() {
    })
   },[])
 
+// ----------------------------------------------------------------
+
+// {{ backgroundImage:'url(${covid})'}}
+
+// ----------------------------------------------------------------
+
   return (
     <div>
-     {/* <code> {JSON.stringify(data, null, 2)} </code> */}
-
+    {/* These are examples of producing the data */}
+    <code> {JSON.stringify(data, null, 2)} </code>
      {/* These are examples of producing the data */}
-     {/* {data.map(item => (
-        <li key={item.states}>
-          <a href={item.url}>Total States {item.states}</a>
-        </li>  
-      ))}
-
-  {data.map(item => (
+    {data.map(item => (
+      <li key={item.states}>
+        <a href={item.url}>Total States {item.states}</a>
+      </li>  
+    ))}
+    {data.map(item => (
         <li key={item.date}>
           <a href={item.url}> Date {item.date}</a>
         </li>  
-      ))} */}
+    ))} 
 
 {data.map(item => (
-
 // Cards Start-------------------------------------------------------------------------------
-<CardDeck style={{display: 'flex', flexDirection: 'row'}} className = "container">
-
+<CardDeck style={{display: 'flex', flexDirection: 'row'}} className = "container-fluid homepage-bgimage">
 {/* Card #1 1------------------------------------------------------------------------------- */}
-<Card style={{flex: 1}} className = "card">
+<Card style={{flex: 1}} className = "card card-custom">
   <Card.Body>
-    <Card.Title className = "card-header bg-dark text-light">Sample</Card.Title>
+    <Card.Title className = "card-header bg-dark text-light">Increases</Card.Title>
     <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
     <Card.Text>
-    This is a wider card with supporting text below as a natural lead-in to
-    additional content. This content is a little bit longer.
+    Positive Increase: {item.positiveIncrease}
+        <br></br>
+        Negative Increase: {item.negativeIncrease}
+        <br></br>
+        Total Tests Increase: {item.totalTestResultsIncrease}
     </Card.Text>
     <Card.Footer>
     <button type="button" className="text-muted"
@@ -58,11 +65,13 @@ function DataBox() {
 {/* Card #2 1------------------------------------------------------------------------------- */}
 <Card style={{flex: 1}} className = "card">
 <Card.Body>
-  <Card.Title className = "card-header bg-dark text-light">Sample</Card.Title>
+  <Card.Title className = "card-header bg-dark text-light">Other Increases</Card.Title>
   <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
   <Card.Text>
-  This is a wider card with supporting text below as a natural lead-in to
-  additional content. This content is a little bit longer.
+  Hospital Increase: {item.hospitalizedIncrease}
+        <br></br>
+        Death Increase: {item.deathIncrease}
+        <br></br>
   </Card.Text>
   <Card.Footer>
   <button type="button" className="text-muted"
