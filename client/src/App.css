@@ -122,5 +122,5 @@ body {
   }
   
 .data-box {
-    background: url("./covid.jpg");
+  background: url('./covid.jpg') no-repeat center;
 }
