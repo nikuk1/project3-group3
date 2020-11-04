@@ -2,7 +2,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function navBar() {
+function NavBar() {
     return (
         <div>
             <h1 className="card-header p-3">
@@ -12,4 +12,4 @@ function navBar() {
     )
 }
 
-    export default navBar; 
+    export default NavBar; 
