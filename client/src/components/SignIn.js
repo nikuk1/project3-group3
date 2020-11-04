@@ -23,23 +23,19 @@ class signIn extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        axios.get('/api/users/:userId', {
+        axios.post('', {
             username: this.state.username,
             password: this.state.password
           })
           .then(function (response) {
-            console.log(response);
-            alert("Welcome back!");
-          })
-          .catch(function (error) {
-            console.log(error);
+            localStorage.setItem('jwt', response.data)
           });
     }
 
     render() {
         return(
             <div className="form">
-                <form className="fields">
+                <form className="fields" onSubmit={this.handleSubmit}>
                     <div className="field">
                     <label className="fieldLable" htmlFor="username">Username:</label>
                     <input type="text" id="username" className="formInput" name="username" value={this.state.username} onChange={this.handleChange} />
@@ -51,7 +47,7 @@ class signIn extends Component {
                     </div>
 
                     <div className="field">
-                        <button type="submit" className="button mr-20" onclick={this.handleSubmit}>Submit</button> <Link to="/">Sign Up!</Link>
+                        <button type="submit" className="button mr-20" >Submit</button> <Link to="/">Sign Up!</Link>
                     </div>
                 </form>
             </div>
