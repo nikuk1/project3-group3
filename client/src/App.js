@@ -5,7 +5,7 @@ import DataBox from './components/databox.js'
 import NavBar from './components/NavBar.js'
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import './App.css';
+// import './App.css';
 
 function App() {
   return (
