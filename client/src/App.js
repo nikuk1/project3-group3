@@ -1,6 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import DataBox from './components/databox.js'
 import DataBoxAz from './components/databoxaz.js'
 import NavBar from './components/NavBar.js'
 
