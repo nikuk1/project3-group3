@@ -44,7 +44,7 @@ function DataBox() {
 <Card style={{flex: 1}} className = "card card-custom">
   <Card.Body>
     <Card.Title className = "card-header bg-dark text-light">Increases</Card.Title>
-    <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
+    <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix(item.date)}</Card.Subtitle>
     <Card.Text>
     Positive Increase: {item.positiveIncrease}
         <br></br>
@@ -63,7 +63,7 @@ function DataBox() {
 </Card>
 
 {/* Card #2 1------------------------------------------------------------------------------- */}
-<Card style={{flex: 1}} className = "card">
+<Card style={{flex: 1}} className = "card card-custom">
 <Card.Body>
   <Card.Title className = "card-header bg-dark text-light">Other Increases</Card.Title>
   <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
@@ -84,7 +84,7 @@ function DataBox() {
 </Card>
 
 {/* Card #3 1------------------------------------------------------------------------------- */}
-<Card style={{flex: 1}} className = "card">
+<Card style={{flex: 1}} className = "card card-custom">
 <Card.Body>
   <Card.Title className = "card-header bg-dark text-light">Cases</Card.Title>
   <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
@@ -105,7 +105,7 @@ function DataBox() {
 </Card>
 
 {/* Card #4 1------------------------------------------------------------------------------- */}
-<Card style={{flex: 1}} className = "card">
+<Card style={{flex: 1}} className = "card card-custom">
 <Card.Body>
   <Card.Title className = "card-header bg-dark text-light">Medical</Card.Title>
   <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>

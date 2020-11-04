@@ -27,12 +27,12 @@ background: #f1f1f1;
 /* Added during Project3-group3 */
 
 .data-box {
-  background: url('../src/img/covid-19.png') center no-repeat;
+  background: url('./img/covid-19.png') center no-repeat;
   position: static;
 }
 
 .form-box {
-  background: url('../src/img/maskedCrowd.png') no-repeat center;
+  background: url('./img/maskedCrowd.png') no-repeat center;
 }
 
 .card-custom {
@@ -40,7 +40,7 @@ background: #f1f1f1;
 }
 
 .homepage-bgimage {
-  background: url('../src/img/covid-19.png');
+  background: url('./img/covid-19.png');
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
