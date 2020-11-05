@@ -5,13 +5,20 @@ import DataBox from './components/databox.js'
 import NavBar from './components/NavBar.js'
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import Select from './components/Select';
+import '../src/App.css'
+// import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className = "App homepage-bgimage">
       <NavBar></NavBar>
+      <br></br>
+      <Select></Select>
+      <br></br>
       <DataBox></DataBox>
 
+      <br></br>
       <Router>
         <Route exact path='/' component={SignUp}>
         </Route>
