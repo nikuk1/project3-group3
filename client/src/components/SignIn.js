@@ -35,8 +35,8 @@ class signIn extends Component {
 
     render() {
         return(
-            <div className="form-box">
-                <form className="fields" onSubmit={this.handleSubmit}>
+            <div align = "center">
+                <form className="form-box fields w-auto p-3 col-md-3" onSubmit={this.handleSubmit}>
                     <div className="field">
                     <label className="fieldLable" htmlFor="username">Username:</label>
                     <input type="text" id="username" className="formInput" name="username" value={this.state.username} onChange={this.handleChange} />
