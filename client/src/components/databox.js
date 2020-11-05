@@ -4,8 +4,15 @@ import CardDeck from 'react-bootstrap/Card';
 import fetchData from '../API/fetchData';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import addDateSuffix from '../dateFormat';
-// import covid from '../img/covid-19.png';
+import moment from 'moment';
+
+// Function to format numbers
+function numFormat(num)
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
 
 function DataBox() {
   const [data, setData] = React.useState([])
@@ -15,42 +22,36 @@ function DataBox() {
    })
   },[])
 
-// ----------------------------------------------------------------
-
-// {{ backgroundImage:'url(${covid})'}}
-
-// ----------------------------------------------------------------
-
   return (
     <div>
     {/* These are examples of producing the data */}
-    <code> {JSON.stringify(data, null, 2)} </code>
+    {/* <code> {JSON.stringify(data, null, 2)} </code> */}
      {/* These are examples of producing the data */}
-    {data.map(item => (
-      <li key={item.states}>
-        <a href={item.url}>Total States {item.states}</a>
-      </li>  
-    ))}
-    {data.map(item => (
+    {/* {data.map(item => (
         <li key={item.date}>
-          <a href={item.url}> Date {item.date}</a>
+          <a href={item.url}> Date {moment(item.date.toString()).format('MMMM Do YYYY')}</a>
         </li>  
-    ))} 
+    ))}  */}
+        {/* {data.map(item => (
+        <li key={item.date}>
+          <a href={item.url}> Date {numFormat(item.hospitalizedCurrently)}</a>
+        </li>  
+    ))} */}
 
 {data.map(item => (
 // Cards Start-------------------------------------------------------------------------------
-<CardDeck style={{display: 'flex', flexDirection: 'row'}} className = "container-fluid homepage-bgimage">
+<CardDeck style={{display: 'flex', flexDirection: 'row'}} className = "container">
 {/* Card #1 1------------------------------------------------------------------------------- */}
 <Card style={{flex: 1}} className = "card card-custom">
   <Card.Body>
-    <Card.Title className = "card-header bg-dark text-light">Increases</Card.Title>
-    <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix(item.date)}</Card.Subtitle>
+    <Card.Title className = "card-header bg-dark text-light">Case Tracking</Card.Title>
+    <Card.Subtitle className = "badge badge-primary badge-pill">{moment(item.date.toString()).format('MMMM Do YYYY')}</Card.Subtitle>
     <Card.Text>
-    Positive Increase: {item.positiveIncrease}
+    Total cases: {numFormat((item.positive))}
         <br></br>
-        Negative Increase: {item.negativeIncrease}
+    New Cases Today: {numFormat((item.positiveIncrease))}
         <br></br>
-        Total Tests Increase: {item.totalTestResultsIncrease}
+    Recovered: {numFormat((item.recovered))}
     </Card.Text>
     <Card.Footer>
     <button type="button" className="text-muted"
@@ -65,13 +66,14 @@ function DataBox() {
 {/* Card #2 1------------------------------------------------------------------------------- */}
 <Card style={{flex: 1}} className = "card card-custom">
 <Card.Body>
-  <Card.Title className = "card-header bg-dark text-light">Other Increases</Card.Title>
-  <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
+  <Card.Title className = "card-header bg-dark text-light">Hospitalization</Card.Title>
+  <Card.Subtitle className = "badge badge-primary badge-pill">{moment(item.date.toString()).format('MMMM Do YYYY')}</Card.Subtitle>
   <Card.Text>
-  Hospital Increase: {item.hospitalizedIncrease}
+  Persons in Hospital: {numFormat((item.hospitalizedCurrently))}
         <br></br>
-        Death Increase: {item.deathIncrease}
+        Persons in ICU {numFormat((item.inIcuCurrently))}
         <br></br>
+  Persons on Ventilator: {numFormat((item.onVentilatorCumulative))}
   </Card.Text>
   <Card.Footer>
   <button type="button" className="text-muted"
@@ -87,12 +89,13 @@ function DataBox() {
 <Card style={{flex: 1}} className = "card card-custom">
 <Card.Body>
   <Card.Title className = "card-header bg-dark text-light">Cases</Card.Title>
-  <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
+  <Card.Subtitle className = "badge badge-primary badge-pill">{moment(item.date.toString()).format('MMMM Do YYYY')}</Card.Subtitle>
   <Card.Text>
-  Positive cases: {item.positive}
+  Positive cases: {numFormat((item.positive))}
   <br></br>
-  Negative cases: {item.negative}
+  Negative cases: {numFormat((item.negative))}
   <br></br>
+  Total tests: {numFormat((item.totalTestResults))}
   </Card.Text>
   <Card.Footer>
   <button type="button" className="text-muted"
@@ -107,14 +110,12 @@ function DataBox() {
 {/* Card #4 1------------------------------------------------------------------------------- */}
 <Card style={{flex: 1}} className = "card card-custom">
 <Card.Body>
-  <Card.Title className = "card-header bg-dark text-light">Medical</Card.Title>
-  <Card.Subtitle className = "badge badge-primary badge-pill">{addDateSuffix((item.date))}</Card.Subtitle>
+  <Card.Title className = "card-header bg-dark text-light">Outcomes</Card.Title>
+  <Card.Subtitle className = "badge badge-primary badge-pill">{moment(item.date.toString()).format('MMMM Do YYYY')}</Card.Subtitle>
   <Card.Text>
-  Currently hospitalized: {item.hospitalizedCurrently}
+  Recovered: {numFormat((item.recovered))} 
   <br></br>
-  Recovered: {item.recovered}
-  <br></br>
-  Deaths: {item.death}
+  Deaths: {numFormat((item.death))}
   </Card.Text>
   <Card.Footer>
   <button type="button" className="text-muted"

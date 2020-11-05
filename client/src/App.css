@@ -35,17 +35,20 @@ background: #f1f1f1;
   background: url('./img/maskedCrowd.png') no-repeat center;
 }
 
+
 .card-custom {
   opacity: 50%;
+  color: red;
 }
 
 .homepage-bgimage {
   background: url('./img/covid-19.png');
-  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
 
 /* end of newly created Project3-group3 styles (others in doc were altered as wel) */
 
