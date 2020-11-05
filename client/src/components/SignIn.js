@@ -24,14 +24,18 @@ class signIn extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        axios.post('', {
+        axios.post(`/api/users/sign-in`, {
             username: this.state.username,
             password: this.state.password
           })
-          .then(function (response) {
-            localStorage.setItem('jwt', response.data)
+          .then(response => {
+            if (response.data.accessToken) {
+              localStorage.setItem("user", JSON.stringify(response.data));
+            }
+    
+            return response.data;
           });
-    }
+      }
 
     render() {
         return(
