@@ -5,6 +5,8 @@
 /* border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements. */
 * {
   box-sizing: border-box;
+  /* Added during Project3-group3 */
+  flex-direction: row !important;  
 }
 
 h1 {
@@ -22,6 +24,34 @@ background: #f1f1f1;
 }
 
 /* Card items start --------------------------------------------------------------------- */
+/* Added during Project3-group3 */
+
+.data-box {
+  background: url('./img/covid-19.png') center no-repeat;
+  position: static;
+}
+
+.form-box {
+  background: url('./img/maskedCrowd.png') no-repeat center;
+}
+
+
+.card-custom {
+  opacity: 50%;
+  color: red;
+}
+
+.homepage-bgimage {
+  background: url('./img/covid-19.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* end of newly created Project3-group3 styles (others in doc were altered as wel) */
+
 ul.list-group {
   min-height: 130px;
 }
