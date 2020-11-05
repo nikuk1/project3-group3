@@ -28,7 +28,6 @@ background: #f1f1f1;
 
 .data-box {
   background: url('./img/covid-19.png') center no-repeat;
-  position: static;
 }
 
 .form-box {
@@ -37,7 +36,6 @@ background: #f1f1f1;
 
 
 .card-custom {
-  opacity: 50%;
   color: red;
 }
 
@@ -48,7 +46,12 @@ background: #f1f1f1;
   background-size: cover;
 }
 
-
+.select-box{
+border: 5em;
+background-color: white;
+color: blue;
+padding: 25px 75px !important;
+}
 
 /* end of newly created Project3-group3 styles (others in doc were altered as wel) */
 
