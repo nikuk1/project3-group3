@@ -27,11 +27,11 @@ background: #f1f1f1;
 /* Added during Project3-group3 */
 
 .data-box {
-  background: url('./img/covid-19.png') center no-repeat;
+  background: url(./img/covid-19.png) center no-repeat;
 }
 
 .form-box {
-  background: url('./img/maskedCrowd.png') no-repeat center;
+  background: url(./img/maskedCrowd.png) no-repeat center;
 }
 
 
@@ -40,7 +40,7 @@ background: #f1f1f1;
 }
 
 .homepage-bgimage {
-  background: url('./img/covid-19.png');
+  background: url(./img/covid-19.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,6 +53,41 @@ color: blue;
 padding: 25px 75px !important;
 }
 
+.footer {
+    padding: 10px;
+}
+
+.mice {
+  background: url(./img/three-mice.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 250px; 
+  height: 150px; 
+  position: relative;
+  overflow: hidden;
+  margin: 10px; 
+  float: right;
+}    
+
+#footer {
+  /* Some padding and margin added to show seperation for future styling */
+  padding: 10px;
+  overflow: hidden; 
+  margin: 10px;
+  background-color: ivory;
+}
+  #footer p#totop {
+      font-size: 12px; 
+      float: right; 
+      margin: 0 30px 0 0;
+  }
+      #footer a {
+      color: #a12121; 
+      text-decoration: none;
+  }
+      #footer a:hover {
+          color: #671111;
+            }
 /* end of newly created Project3-group3 styles (others in doc were altered as wel) */
 
 ul.list-group {

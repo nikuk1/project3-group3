@@ -6,6 +6,7 @@ import NavBar from './components/NavBar.js'
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Select from './components/Select';
+import Footer from './components/Footer';
 import '../src/App.css'
 // import './App.css';
 
@@ -26,6 +27,11 @@ function App() {
         <Route exact path='/sign-in' component={SignIn}>
         </Route>
       </Router>
+      <br></br>
+      <br></br>
+      <Footer>
+      </Footer>
+
     </div>
   );
 }

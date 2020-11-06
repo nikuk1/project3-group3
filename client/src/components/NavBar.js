@@ -1,4 +1,3 @@
-// import styles from '../NavBar.module.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
