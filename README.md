@@ -7,6 +7,12 @@ Heroku deploy: https://ancient-fortress-10498.herokuapp.com/
 ## Snap
 ![proj3](https://user-images.githubusercontent.com/65746547/98488840-9c19d500-21e8-11eb-8862-7795cd3368da.jpg)
 
+## Features
+List of features ready and TODOs for future development
+* Able to search by state
+* Login feaure
+* see how many have recovered from COVID-19
+
 ## Installation
 -Clone repo</br>
 --on 'main' branch of this github repo</br>
