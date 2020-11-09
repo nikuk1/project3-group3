@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const User = require('../models/User');
 
 const userController = {
   // get all users
@@ -15,7 +15,7 @@ const userController = {
   },
   // get signin user by username
   getSigninUser(req, res) {
-    User.findOne({ username: req.body.username })
+    User.findOne({ username: req.body.username})
       .select('-__v')
       // .populate('friends')
       // .populate('thoughts')
@@ -24,29 +24,36 @@ const userController = {
           return res.status(404).json({ message: 'No user with this username!' });
         }
         res.json(dbUserData);
+
+        let isMatch = dbUserData.isCorrectPassword(req.body.password);
+
+        if (!isMatch){
+          res.json('Wrong PWD ' + req.body.password + ' ' + dbUserData.password);
+        }
+
       })
       .catch((err) => {
         console.log(err);
         res.status(500).json(err);
-      });
+      })
   },
   // get single user by username
-  getSingleUser(req, res) {
-    User.findOne({ username: req.params.username })
-      .select('-__v')
-      // .populate('friends')
-      // .populate('thoughts')
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          return res.status(404).json({ message: 'No user with this username!' });
-        }
-        res.json(dbUserData);
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  },
+  // getSingleUser(req, res) {
+  //   User.findOne({ username: req.params.username })
+  //     .select('-__v')
+  //     // .populate('friends')
+  //     // .populate('thoughts')
+  //     .then((dbUserData) => {
+  //       if (!dbUserData) {
+  //         return res.status(404).json({ message: 'No user with this username!' });
+  //       }
+  //       res.json(dbUserData);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(500).json(err);
+  //     });
+  // },
   // create a new user
   createUser(req, res) {
     User.create(req.body)

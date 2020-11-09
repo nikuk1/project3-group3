@@ -28,13 +28,15 @@ class signIn extends Component {
             username: this.state.username,
             password: this.state.password
           })
-          .then(response => {
+          .then(function (response) {
+            console.log(response);
+
             if (response.data.accessToken) {
-              localStorage.setItem("user", JSON.stringify(response.data));
-            }
-    
-            return response.data;
-          });
+                localStorage.setItem("user", JSON.stringify(response.data));
+              }
+      
+              //return response.data;
+          })
       }
 
     render() {
